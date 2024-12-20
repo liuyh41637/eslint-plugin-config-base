@@ -6,9 +6,6 @@
   "engines": {
     "node": "^14.17.0"
   },
-  "config": {
-    "targetDir": ".husky/"
-  },
   "files": [
     "lib",
     "package.json",
@@ -20,9 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:es": "rollup -c scripts/es-build.js",
     "build": "npm run clear && npm run build:es",
-    "clear": "rimraf ./lib",
-    "copy-husky-files": "cp -r .husky/* $npm_package_config_targetDir/",
-    "preinstall": "husky install && npm run copy-husky-files"
+    "clear": "rimraf ./lib"
   },
   "repository": {
     "type": "git",
