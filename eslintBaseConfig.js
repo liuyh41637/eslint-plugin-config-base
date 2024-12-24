@@ -1,5 +1,6 @@
 import { rules, requireParserServicesRules } from "./rules/index";
 const path = require("path");
+const fs = require('fs');
 // 获取执行的项目路径
 function getProjectPath() {
   return process.cwd();
@@ -22,8 +23,8 @@ function readConfigFile() {
 }
 const tsconfig = readConfigFile()
 const includeFiles = tsconfig?.include || []
-const files = includeFiles.filter((f) => !f.include('.vue'))
-export default {
+const files = includeFiles.filter((f) => f.indexOf('.vue') === -1)
+const recommendedConfigs = {
   env: {
     browser: true,
     es2022: true,
@@ -69,4 +70,8 @@ export default {
         ],
       }
     : {}),
-};
+}
+const configs = {
+  recommended: recommendedConfigs
+}
+export { configs };
