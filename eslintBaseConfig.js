@@ -33,7 +33,7 @@ const recommendedConfigs = {
   },
   parser: "vue-eslint-parser",
   parserOptions: {
-    ...(tsconfig ? { parser: "@typescript-eslint-parser" } : {}),
+    ...(tsconfig ? { parser: "@typescript-eslint/parser" } : {}),
     ecmaVersion: "latest",
     sourceType: "module",
     ecmaFeatures: {
