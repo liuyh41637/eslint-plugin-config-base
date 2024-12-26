@@ -4,7 +4,7 @@ const prettierRules = {
         {
             singleQuote: true,
             semi: true,
-            printWidth: 200,
+            printWidth: 180,
             tabWidth: 2,
             trailingComma: 'es5',
             bracketSameLine: false,

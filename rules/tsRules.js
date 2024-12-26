@@ -30,5 +30,7 @@ const tsRules = {
   "@typescript-eslint/triple-slash-reference": "off",
   "@typescript-eslint/consistent-type-assertions": "off",
   "@typescript-eslint/no-non-null-assertion": "off",
+  "prefer-rest-params": "off",
+  "prefer-spread": "off"
 };
 export {tsRules};

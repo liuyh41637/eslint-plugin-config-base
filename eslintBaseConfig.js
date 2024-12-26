@@ -40,10 +40,17 @@ const recommendedConfigs = {
       jsx: true,
     },
   },
-  plugins: ["vue", "prettier", "@typescript-eslint"],
+  plugins: [
+    "vue",
+    "@typescript-eslint",
+    "sonarjs",
+    "no-useless-assign",
+    "prettier"
+  ],
   extends: [
     "eslint:recommended",
     "plugin:vue/vue3-recommended",
+    "plugin:sonarjs/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
   ],
