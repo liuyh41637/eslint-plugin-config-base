@@ -28,3 +28,6 @@ const sonarRules = {
   "sonarjs/no-gratuitous-expressions": "off",
   "sonarjs/no-use-of-empty-return-value": "off"
 }
+export {
+  sonarRules
+}
