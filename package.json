@@ -1,8 +1,9 @@
 {
   "name": "eslint-plugin-config-base",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "eslint简单校验及提交校验实现",
   "main": "lib/cjs/eslintBaseConfig.js",
+  "module": "lib/esm/eslintBaseConfig.js",
   "engines": {
     "node": "^14.17.0"
   },
@@ -11,7 +12,10 @@
   },
   "files": [
     "lib",
-    ".husky"
+    ".husky",
+    "bin.js",
+    "util.js",
+    "rules"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
