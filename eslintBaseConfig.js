@@ -1,26 +1,5 @@
 import { rules, requireParserServicesRules } from "./rules/index";
-const path = require("path");
-const fs = require('fs');
-// 获取执行的项目路径
-function getProjectPath() {
-  return process.cwd();
-}
-function getConfigPath() {
-  const projectPath = getProjectPath();
-  const configPath = path.resolve(projectPath, "tsconfig.json");
-  return configPath
-}
-const tsConfigPath = getConfigPath()
-// 读取项目中的tsconfig文件
-function readConfigFile() {
-  try {
-    const config = JSON.parse(fs.readFileSync(tsConfigPath, "utf-8"));
-    return config;
-  } catch (error) {
-    console.error("Failed to read config file:", error);
-    return null;
-  }
-}
+import { readConfigFile } from './util';
 const tsconfig = readConfigFile()
 const includeFiles = tsconfig?.include || []
 const files = includeFiles.filter((f) => f.indexOf('.vue') === -1)
