@@ -12,7 +12,7 @@ const esOutput = Object.entries(buildConfig).map(([module, config]) => {
 });
 export default [
   {
-    input: ["eslintBaseConfig.js"],
+    input: ["eslintBaseConfig.js", "util.js"],
     output: esOutput,
     plugins: [
       esbuild({

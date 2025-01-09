@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const { exec } = require('child_process');
-import { copyFile } from './util';
+const { copyFile } = require('./lib/cjs/util');
 const operateType = process.argv[2] // 假设是config-base后的参数
 switch(operateType){
   case 'husky': {

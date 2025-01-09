@@ -68,9 +68,9 @@ pckage.json中scripts对象下添加以下可执行脚本，先执行1再执行2
 ## eslint开启校验规则
 |规则|描述|状态|
 |-|-|-|
-|for-direction| |error|
-|no-var||error|
-|prefer-const||error|
+|for-direction|禁止永远无法停止的for循环|error|
+|no-var|要求使用let或const|error|
+|prefer-const|常量类型数据使用const定义|error|
 |no-shadow-restricted-names||error|
 |no-global-assign||error|
 |no-extra-boolean-cast||error|
@@ -94,13 +94,13 @@ pckage.json中scripts对象下添加以下可执行脚本，先执行1再执行2
 |no-unsafe-optional-chaining||warn|
 |no-self-assign||warn|
 |no-extra-parens||warn|
-|default-case||warn|
-|no-alert||warn|
-|no-console||warn|
-|no-duplicate-imports||warn|
-|max-depth||warn|
-|max-params||warn|
-|default-case-last||warn|
+|default-case|要求switch函数提供default条件|warn|
+|no-alert|禁止使用alert|warn|
+|no-console|禁止打印日志|warn|
+|no-duplicate-imports|禁止重复的导入|warn|
+|max-depth|嵌套深度最大10|warn|
+|max-params|函数最多7个参数|warn|
+|default-case-last|要求switch函数的default条件放到最后|warn|
 
 ## prettier 规则配置
 |规则|描述|值|
