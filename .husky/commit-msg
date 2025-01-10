@@ -26,8 +26,13 @@ fi
 # T[0-9]{12}：匹配以T开头后面连接12个数字的字符串
 # (-[0-9]+)?：匹配可选的连接符-后面连接至少一个数字的字符串，？表示可有可无
 # $：表示字符串的结束
-if ! echo "$commit_msg" | grep -qE '^[[:space:]]*\[TS修改单编号/效能任务编号\][[:space:]]*[:：][[:space:]]*T[0-9]{12}(-[0-9]+)?([[:space:]]*,[[:space:]]*T[0-9]{12}(-[0-9]+)?)?$'; then
-    echo "错误：提交信息必须包含任务单号，格式为[TS修改单编号/效能任务编号]:T202412176666,多个任务单请用英文逗号隔开"
+prefixReg='^[[:space:]]*\[TS修改单编号/效能任务编号\][[:space:]]*'
+colonReg='[:：][[:space:]]*'
+taskIdReg='T[0-9]{12}(-[0-9]+)?'
+multipleTaskIdReg='([[:space:]]*,[[:space:]]*T[0-9]{12}(-[0-9]+)?)*$'
+fullReg="$prefixReg$colonReg$taskIdReg$multipleTaskIdReg"
+if ! echo "$commit_msg" | grep -qE "$fullReg"; then
+    echo "错误：提交信息必须包含任务单号，格式为[TS修改单编号/效能任务编号]:T202412176666或T202412176666,T202412176667"
     exit 1
 fi
 
