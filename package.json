@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-config-base",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "eslint简单校验及提交校验实现",
   "main": "lib/cjs/eslintBaseConfig.js",
   "module": "lib/esm/eslintBaseConfig.js",
