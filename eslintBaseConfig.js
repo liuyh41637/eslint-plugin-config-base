@@ -1,5 +1,6 @@
 import { rules, requireParserServicesRules } from "./rules/index";
-import { readConfigFile } from './util';
+import { readConfigFile, getConfigPath } from './util';
+const tsConfigPath = getConfigPath()
 const tsconfig = readConfigFile()
 const includeFiles = tsconfig?.include || []
 const files = includeFiles.filter((f) => f.indexOf('.vue') === -1)
