@@ -13,7 +13,7 @@ if [ "$lines" -gt "$MAX_LINES" ]; then
     exit 1
 fi
 # 校验提交commit信息是否为空
-if [ -z "$commit_msg" ] then
+if [ -z "$commit_msg" ]; then
  echo "错误：提交信息不能为空"
  exit 1
 fi
