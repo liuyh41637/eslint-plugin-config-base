@@ -12,7 +12,9 @@ export function getConfigPath() {
 }
 // 从源路径复制文件到目标路径
 export function copyFile(source, target) {
-  const sourcePath = path.join(__dirname, source);
+  const rootPath = path.dirname("lib")
+  console.log(rootPath)
+  const sourcePath = path.join(rootPath, source);
   const targetPath = path.join(getProjectPath(), target);
   fs.copyFileSync(sourcePath, targetPath);
 }
