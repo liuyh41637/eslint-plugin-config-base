@@ -15,16 +15,16 @@ switch(operateType){
     });
   };break;
   case 'copy': {
-    copyFile('.husky/pre-commit.sh', `${nodeArgvs[3] || '.husky'}/pre-commit.sh`);
-    copyFile('.husky/commit-msg.sh', `${nodeArgvs[3] || '.husky'}/commit-msg.sh`);
+    copyFile('.husky/pre-commit', `${nodeArgvs[3] || '.husky'}/pre-commit`);
+    copyFile('.husky/commit-msg', `${nodeArgvs[3] || '.husky'}/commit-msg`);
   };break;
   case 'copy-pre-commit': {
-    const sourcePath = `.husky/pre-commit.sh`
+    const sourcePath = `.husky/pre-commit`
     const targetPath = nodeArgvs[4] || sourcePath
     copyFile(sourcePath, targetPath)
   };break;
   case 'copy-commit-msg': {
-    const sourcePath = `.husky/commit-msg.sh`
+    const sourcePath = `.husky/commit-msg`
     const targetPath = nodeArgvs[4] || sourcePath
     copyFile(sourcePath, targetPath)
   };break;
